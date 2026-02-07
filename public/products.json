@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Luxury Wrist Watch",
+    "description": "Elegant luxury wrist watch with premium finishing and modern design.",
+    "currentBidPrice": 1250,
+    "timeLeft": "2h 15m",
+    "bidsCount": 18,
+    "image": "https://i.ibb.co.com/YBG5wGN6/Bid1-min.png"
+  },
+  {
+    "id": 2,
+    "title": "Wireless Headphones Pro",
+    "description": "High-quality wireless headphones with deep bass and noise isolation.",
+    "currentBidPrice": 4200,
+    "timeLeft": "5h 40m",
+    "bidsCount": 32,
+    "image": "https://i.ibb.co.com/C5qWMd06/Bid5-min.png"
+  },
+  {
+    "id": 3,
+    "title": "DSLR Camera Lens",
+    "description": "Professional camera lens ideal for photography and videography.",
+    "currentBidPrice": 3100,
+    "timeLeft": "1d 3h",
+    "bidsCount": 9,
+    "image": "https://i.ibb.co.com/DfJzh7R8/Bid6-min.png"
+  },
+  {
+    "id": 4,
+    "title": "Premium Smart Watch",
+    "description": "Smart watch with fitness tracking, notifications, and sleek design.",
+    "currentBidPrice": 18500,
+    "timeLeft": "8h 10m",
+    "bidsCount": 45,
+    "image": "https://i.ibb.co.com/d4w2kTP4/Bid4-min.png"
+  },
+  {
+    "id": 5,
+    "title": "Modern Bluetooth Speaker",
+    "description": "Portable Bluetooth speaker with powerful sound and long battery life.",
+    "currentBidPrice": 2200,
+    "timeLeft": "3h 25m",
+    "bidsCount": 21,
+    "image": "https://i.ibb.co.com/kgFGkdbT/Bid3-min.png"
+  },
+  {
+    "id": 6,
+    "title": "Gaming Mechanical Keyboard",
+    "description": "RGB mechanical keyboard designed for professional gamers.",
+    "currentBidPrice": 5600,
+    "timeLeft": "6h 50m",
+    "bidsCount": 27,
+    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+  },
+  {
+    "id": 7,
+    "title": "Smart Phone Device",
+    "description": "Modern smartphone with high-resolution display and fast performance.",
+    "currentBidPrice": 7800,
+    "timeLeft": "12h 30m",
+    "bidsCount": 14,
+    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
+  },
+  {
+    "id": 8,
+    "title": "Classic Wrist Watch",
+    "description": "Minimalist classic wrist watch perfect for everyday use.",
+    "currentBidPrice": 950,
+    "timeLeft": "9h 5m",
+    "bidsCount": 11,
+    "image": "https://i.ibb.co.com/YBG5wGN6/Bid1-min.png"
+  }
+]
