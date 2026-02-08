@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Product from "../product/Product";
 
 const Main = () => {
   const [products, setProducts] = useState([]);
@@ -9,13 +10,10 @@ const Main = () => {
   }, [Main]);
   // console.log(products);
   return (
-    <div className="w-11/12 mx-auto">
-      <h3 className="text-2xl font-bold mt-20">
-        Active Auctions {products.length}
-      </h3>
-      <p className="text-gray-300 mt-3">
-        Discover and bid on extraordinary items
-      </p>
+    <div>
+      {products.map((product) => (
+        <Product product={product}></Product>
+      ))}
     </div>
   );
 };

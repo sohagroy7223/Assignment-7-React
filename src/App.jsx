@@ -9,7 +9,13 @@ function App() {
     <>
       <Navbar></Navbar>
       <Hero></Hero>
-      <Main></Main>
+
+      <div className="w-11/12 mx-auto">
+        <h3 className="text-2xl font-bold mt-20">Active Auctions</h3>
+        <p className="text-gray-300 mt-3">
+          Discover and bid on extraordinary items
+        </p>
+      </div>
       <div className="main-container flex justify-between w-11/12 mx-auto text-center gap-3">
         <div className="left-container w-[70%] bg-white rounded-2xl">
           <div className="overflow-x-auto rounded-box border  text-black">
@@ -23,16 +29,8 @@ function App() {
                   <th>Bid Now</th>
                 </tr>
               </thead>
-              <tbody>
-                {/* row 1 */}
-                <tr>
-                  <th>1</th>
-                  <td>Cy Ganderton</td>
-                  <td>Quality Control Specialist</td>
-                  <td>Blue</td>
-                </tr>
-              </tbody>
             </table>
+            <Main></Main>
           </div>
         </div>
         <div className="right-container w-[30%] rounded-2xl bg-white">
