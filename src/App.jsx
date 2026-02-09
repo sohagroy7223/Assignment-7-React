@@ -3,6 +3,7 @@ import { CiHeart } from "react-icons/ci";
 import Hero from "./components/Hero Section/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Products from "./components/Navbar/products/Products";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 }
