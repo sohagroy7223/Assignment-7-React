@@ -1,10 +1,10 @@
 import React from "react";
 import { CiHeart } from "react-icons/ci";
 const Product = ({ product }) => {
-  console.log(product);
+  //   console.log(product);
   return (
-    <tr>
-      <td className="border">
+    <tr className="border">
+      <td>
         <img className="w-[100px] rounded-xl" src={product.image} alt="" />
       </td>
       <td>{product.title}</td>
