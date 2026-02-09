@@ -1,6 +1,6 @@
 import React from "react";
 import { CiHeart } from "react-icons/ci";
-const Product = ({ product }) => {
+const Product = ({ product, handelToHeard }) => {
   //   console.log(product);
   return (
     <tr>
@@ -10,7 +10,7 @@ const Product = ({ product }) => {
       <td>{product.title}</td>
       <td>${product.currentBidPrice}</td>
       <td>{product.timeLeft}</td>
-      <td>{<CiHeart size={25} />}</td>
+      <td onClick={() => handelToHeard(product)}>{<CiHeart size={25} />}</td>
     </tr>
   );
 };

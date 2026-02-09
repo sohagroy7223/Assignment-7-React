@@ -17,7 +17,7 @@ const Footer = () => {
         <h4>Categories</h4>
         <h4>How to works</h4>
       </div>
-      <p>© 2025 Sohag. All rights reserved.</p>
+      <p>©{new Date().getFullYear()} Sohag. All rights reserved.</p>
     </div>
   );
 };

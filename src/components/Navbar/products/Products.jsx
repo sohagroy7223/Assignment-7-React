@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Product from "../../product/Product";
+
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const [active, setActive] = useState(null);
 
   useEffect(() => {
     fetch("products.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
+  const handelToHeard = (product) => {
+    console.log("clicked heard", product);
+  };
 
   return (
     <div>
@@ -25,7 +31,12 @@ const Products = () => {
           </thead>
           <tbody>
             {products.map((product) => (
-              <Product key={product.id} product={product}></Product>
+              <Product
+                handelToHeard={handelToHeard}
+                key={product.id}
+                product={product}
+                active={active}
+              ></Product>
             ))}
           </tbody>
         </table>
