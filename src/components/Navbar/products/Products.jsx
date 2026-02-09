@@ -1,6 +1,14 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import Product from "../../product/Product";
 const Products = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("products.json")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+
   return (
     <div>
       <div className="overflow-x-auto rounded-box border border-base-content/5 text-black">
@@ -8,34 +16,17 @@ const Products = () => {
           {/* head */}
           <thead className="text-black">
             <tr>
+              <th>items</th>
               <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Current Bid</th>
+              <th>Time Left</th>
+              <th>Bid Now</th>
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
-            {/* row 2 */}
-            <tr>
-              <th>2</th>
-              <td>Hart Hagerty</td>
-              <td>Desktop Support Technician</td>
-              <td>Purple</td>
-            </tr>
-            {/* row 3 */}
-            <tr>
-              <th>3</th>
-              <td>Brice Swyre</td>
-              <td>Tax Accountant</td>
-              <td>Red</td>
-            </tr>
+            {products.map((product) => (
+              <Product product={product}></Product>
+            ))}
           </tbody>
         </table>
       </div>
