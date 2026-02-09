@@ -3,7 +3,7 @@ import { CiHeart } from "react-icons/ci";
 const Product = ({ product }) => {
   //   console.log(product);
   return (
-    <tr className="border">
+    <tr>
       <td>
         <img className="w-[100px] rounded-xl" src={product.image} alt="" />
       </td>
