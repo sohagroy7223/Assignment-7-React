@@ -12,12 +12,13 @@ const Products = () => {
   }, []);
 
   const handelToHeard = (product) => {
-    console.log("clicked heard", product);
+    // console.log("clicked heard", product.id);
+    setActive(active === product ? null : product);
   };
 
   return (
     <div>
-      <div className="overflow-x-auto rounded-box border border-base-content/5 text-black">
+      <div className="overflow-x-auto rounded-box border  text-black">
         <table className="table ">
           {/* head */}
           <thead className="text-black">
@@ -35,7 +36,7 @@ const Products = () => {
                 handelToHeard={handelToHeard}
                 key={product.id}
                 product={product}
-                active={active}
+                active={active === product.id}
               ></Product>
             ))}
           </tbody>

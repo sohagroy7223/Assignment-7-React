@@ -1,6 +1,6 @@
 import React from "react";
 import { CiHeart } from "react-icons/ci";
-const Product = ({ product, handelToHeard }) => {
+const Product = ({ product, handelToHeard, active }) => {
   //   console.log(product);
   return (
     <tr>
@@ -10,7 +10,15 @@ const Product = ({ product, handelToHeard }) => {
       <td>{product.title}</td>
       <td>${product.currentBidPrice}</td>
       <td>{product.timeLeft}</td>
-      <td onClick={() => handelToHeard(product)}>{<CiHeart size={25} />}</td>
+      <td>
+        {
+          <CiHeart
+            onClick={() => handelToHeard(product.id)}
+            className={`cursor-pointer ${active ? "bg-red-700" : "bg-white"}`}
+            size={25}
+          />
+        }
+      </td>
     </tr>
   );
 };
