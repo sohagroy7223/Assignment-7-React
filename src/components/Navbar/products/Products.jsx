@@ -18,7 +18,7 @@ const Products = () => {
 
   return (
     <div>
-      <div className="overflow-x-auto rounded-box border  text-black">
+      <div className="overflow-x-auto rounded-box   text-black">
         <table className="table ">
           {/* head */}
           <thead className="text-black">

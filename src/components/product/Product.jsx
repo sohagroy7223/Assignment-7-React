@@ -14,7 +14,7 @@ const Product = ({ product, handelToHeard, active }) => {
         {
           <CiHeart
             onClick={() => handelToHeard(product.id)}
-            className={`cursor-pointer ${active ? "bg-red-700" : "bg-white"}`}
+            className={`outline-1 cursor-pointer ${active ? "bg-red-700" : "bg-white"}`}
             size={25}
           />
         }
