@@ -11,13 +11,19 @@ const Product = ({ product, handelToHeard, active }) => {
       <td>${product.currentBidPrice}</td>
       <td>{product.timeLeft}</td>
       <td>
-        {
-          <CiHeart
-            onClick={() => handelToHeard(product.id)}
-            className={`outline-1 cursor-pointer ${active ? "bg-red-700" : "bg-white"}`}
-            size={25}
-          />
-        }
+        <span
+          onClick={() => handelToHeard(product.id)}
+          className=" bg-gray-200 
+                 cursor-pointer rounded-lg shadow-md"
+        >
+          {
+            <CiHeart
+              className={` transition-all duration-300
+          ${active ? "bg-red-500 scale-110" : "text-gray-400"}`}
+              size={25}
+            />
+          }
+        </span>
       </td>
     </tr>
   );
