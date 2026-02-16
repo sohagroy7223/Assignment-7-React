@@ -19,7 +19,7 @@ const Product = ({ product, handelToHeard, active }) => {
           {
             <CiHeart
               className={` transition-all duration-300
-          ${active ? "bg-red-500 scale-110" : "text-gray-400"}`}
+          ${active ? "bg-red-500 scale-110" : ""}`}
               size={25}
             />
           }
