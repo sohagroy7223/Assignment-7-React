@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useEffect, useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import Hero from "./components/Hero Section/Hero";
 import Navbar from "./components/Navbar/Navbar";
@@ -6,6 +7,21 @@ import Products from "./components/Navbar/products/Products";
 import Footer from "./components/footer/Footer";
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    fetch("products.json")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+
+  const handelToHeard = (product) => {
+    // console.log("clicked heard", product.id);
+    setActive(active === product ? null : product);
+    // setActive(!active);
+  };
+
   return (
     <>
       <Navbar></Navbar>
@@ -20,7 +36,11 @@ function App() {
         </div>
         <div className="main-container flex justify-between w-11/12 mx-auto gap-4 text-black">
           <div className="left-container  bg-white w-[70%] rounded-2xl">
-            <Products></Products>
+            <Products
+              products={products}
+              active={active}
+              handelToHeard={handelToHeard}
+            ></Products>
           </div>
           <div className="right-container bg-white w-[30%] rounded-2xl  ">
             <div className="flex justify-center p-5 items-center gap-1">

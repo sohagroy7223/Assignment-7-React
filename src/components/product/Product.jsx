@@ -13,14 +13,13 @@ const Product = ({ product, handelToHeard, active }) => {
       <td>
         <span
           onClick={() => handelToHeard(product.id)}
-          className=" bg-gray-200 
+          className="  
                  cursor-pointer rounded-lg shadow-md"
         >
           {
             <CiHeart
-              className={` transition-all duration-300
-          ${active ? "bg-red-500 scale-110" : ""}`}
               size={25}
+              className={active ? "bg-red-500" : "text-gray-400"}
             />
           }
         </span>

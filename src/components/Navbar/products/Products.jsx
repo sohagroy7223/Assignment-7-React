@@ -1,22 +1,6 @@
-import React, { useEffect, useState } from "react";
 import Product from "../../product/Product";
 
-const Products = () => {
-  const [products, setProducts] = useState([]);
-  const [active, setActive] = useState(false);
-
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
-
-  const handelToHeard = (product) => {
-    // console.log("clicked heard", product.id);
-    setActive(active === product ? null : product);
-    // setActive(!active);
-  };
-
+const Products = ({ products, handelToHeard, active }) => {
   return (
     <div>
       <div className="overflow-x-auto rounded-box text-black">
