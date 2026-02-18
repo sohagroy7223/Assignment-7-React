@@ -30,7 +30,7 @@ const Products = ({ handelFavorite, handelToHeard, active }) => {
                 handelFavorite={handelFavorite}
                 key={product.id}
                 product={product}
-                active={active === product.id}
+                active={active.includes(product.id)}
               />
             ))}
           </tbody>

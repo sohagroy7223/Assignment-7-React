@@ -18,7 +18,14 @@ function App() {
   };
 
   const handelToHeard = (product) => {
-    setActive(active === product ? null : product.id);
+    setActive((prev) => {
+      if (prev.includes(product.id)) {
+        return prev.filter((id) => id !== product.id);
+      } else {
+        return [...prev, product.id];
+      }
+    });
+
     handelCount(product);
   };
 
