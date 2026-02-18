@@ -10,9 +10,15 @@ import Card from "./components/card/card";
 function App() {
   const [favorite, setFavorite] = useState([]);
 
+  const [active, setActive] = useState(false);
+
   const handelFavorite = (product) => {
     const addFavorite = [...favorite, product];
     setFavorite(addFavorite);
+  };
+
+  const handelToHeard = (product) => {
+    setActive(active === product ? null : product.id);
   };
   // console.log(favorite);
   return (
@@ -28,7 +34,11 @@ function App() {
         </div>
         <div className="main-container flex justify-between w-11/12 mx-auto gap-4 text-black">
           <div className="left-container bg-white w-[70%] rounded-2xl">
-            <Products handelFavorite={handelFavorite}></Products>
+            <Products
+              handelToHeard={handelToHeard}
+              handelFavorite={handelFavorite}
+              active={active}
+            ></Products>
           </div>
           <div className="right-container bg-white w-[30%] rounded-2xl">
             <div className="flex justify-center p-5 items-center gap-1">
@@ -40,7 +50,7 @@ function App() {
               {favorite.map((fav) => (
                 <Card key={fav.id} fav={fav}></Card>
               ))}
-              <div>
+              <div className={`${active ? "hidden" : "block"}`}>
                 <h3 className="text-lg font-semibold">No favorite yet</h3>
                 <p className="text-gray-600 p-3">
                   Click the heart icon on any item to add it to your favorites

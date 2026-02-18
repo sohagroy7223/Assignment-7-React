@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Product from "../../product/Product";
 
-const Products = ({ handelFavorite }) => {
+const Products = ({ handelFavorite, handelToHeard, active }) => {
   const [products, setProducts] = useState([]);
-  const [active, setActive] = useState([]);
 
   useEffect(() => {
     fetch("products.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-
-  const handelToHeard = (product) => {
-    setActive(active === product ? null : product.id);
-  };
 
   return (
     <div>
