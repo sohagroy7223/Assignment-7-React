@@ -10,7 +10,7 @@ import Card from "./components/card/card";
 function App() {
   const [favorite, setFavorite] = useState([]);
   const [count, setCount] = useState(0);
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState([]);
 
   const handelFavorite = (product) => {
     const addFavorite = [...favorite, product];

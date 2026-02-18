@@ -1,5 +1,3 @@
-import React from "react";
-
 import { IoIosHeart } from "react-icons/io";
 
 const Product = ({ product, handelToHeard, active, handelFavorite }) => {
@@ -7,7 +5,7 @@ const Product = ({ product, handelToHeard, active, handelFavorite }) => {
     <tr>
       <td>
         <img
-          className="w-[100px] rounded-xl"
+          className="w-25 rounded-xl"
           src={product.image}
           alt={product.title}
         />
@@ -17,8 +15,12 @@ const Product = ({ product, handelToHeard, active, handelFavorite }) => {
       <td>{product.timeLeft}</td>
       <td>
         <span
-          onClick={() => handelToHeard(product)}
-          className="cursor-pointer rounded-lg shadow-md "
+          onClick={() => {
+            if (!active) handelToHeard(product);
+          }}
+          className={` 
+            ${active ? "cursor-not-allowed " : "cursor-pointer "}
+          `}
         >
           <IoIosHeart
             onClick={() => handelFavorite(product)}
