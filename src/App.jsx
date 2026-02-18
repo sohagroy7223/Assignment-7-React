@@ -9,7 +9,7 @@ import Card from "./components/card/card";
 
 function App() {
   const [favorite, setFavorite] = useState([]);
-
+  const [count, setCount] = useState(0);
   const [active, setActive] = useState(false);
 
   const handelFavorite = (product) => {
@@ -19,6 +19,13 @@ function App() {
 
   const handelToHeard = (product) => {
     setActive(active === product ? null : product.id);
+    handelCount(product);
+  };
+
+  const handelCount = (product) => {
+    const amount = product.currentBidPrice;
+    const totalAmount = count + amount;
+    setCount(totalAmount);
   };
   // console.log(favorite);
   return (
@@ -60,7 +67,7 @@ function App() {
             <hr className="mt-3.5 text-[#DCE5F3]" />
             <div className="flex justify-between p-5">
               <h3 className="text-lg font-medium">Total bids Amount</h3>
-              <h3 className="text-lg font-medium">$000</h3>
+              <h3 className="text-lg font-medium">${count}.00</h3>
             </div>
           </div>
         </div>

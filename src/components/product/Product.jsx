@@ -1,5 +1,6 @@
 import React from "react";
-import { CiHeart } from "react-icons/ci";
+
+import { IoIosHeart } from "react-icons/io";
 
 const Product = ({ product, handelToHeard, active, handelFavorite }) => {
   return (
@@ -19,9 +20,9 @@ const Product = ({ product, handelToHeard, active, handelFavorite }) => {
           onClick={() => handelToHeard(product)}
           className="cursor-pointer rounded-lg shadow-md "
         >
-          <CiHeart
+          <IoIosHeart
             onClick={() => handelFavorite(product)}
-            className={`transition-all duration-300 ${active ? "bg-red-500 scale-110" : ""}`}
+            className={`transition-all duration-300 ${active ? "text-red-500 scale-110" : "text-gray-300"}`}
             size={25}
           />
         </span>
