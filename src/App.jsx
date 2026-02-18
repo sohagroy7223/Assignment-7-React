@@ -1,33 +1,25 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import Hero from "./components/Hero Section/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Products from "./components/Navbar/products/Products";
 import Footer from "./components/footer/Footer";
+import { useState } from "react";
+import Card from "./components/card/card";
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const [active, setActive] = useState(false);
+  const [favorite, setFavorite] = useState([]);
 
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
-
-  const handelToHeard = (product) => {
-    // console.log("clicked heard", product.id);
-    setActive(active === product ? null : product);
-    // setActive(!active);
+  const handelFavorite = (product) => {
+    const addFavorite = [...favorite, product];
+    setFavorite(addFavorite);
   };
-
+  // console.log(favorite);
   return (
     <>
-      <Navbar></Navbar>
-      <Hero></Hero>
+      <Navbar />
+      <Hero />
       <div className="bg-gray-200">
-        {" "}
         <div className="mt-10 p-12">
           <h3 className="text-2xl font-semibold text-black">Active Auctions</h3>
           <p className="text-gray-500">
@@ -35,25 +27,25 @@ function App() {
           </p>
         </div>
         <div className="main-container flex justify-between w-11/12 mx-auto gap-4 text-black">
-          <div className="left-container  bg-white w-[70%] rounded-2xl">
-            <Products
-              products={products}
-              active={active}
-              handelToHeard={handelToHeard}
-            ></Products>
+          <div className="left-container bg-white w-[70%] rounded-2xl">
+            <Products handelFavorite={handelFavorite}></Products>
           </div>
-          <div className="right-container bg-white w-[30%] rounded-2xl  ">
+          <div className="right-container bg-white w-[30%] rounded-2xl">
             <div className="flex justify-center p-5 items-center gap-1">
               <CiHeart size={27} />
               <h3 className="text-2xl font-medium">Favorite Items</h3>
             </div>
             <hr className="text-[#DCE5F3]" />
-
             <div className="text-center mt-3">
-              <h3 className="text-lg font-semibold ">No favorite yet</h3>
-              <p className="text-gray-600 p-3 ">
-                Click the heart icon on any item to add it to your favorites
-              </p>
+              {favorite.map((fav) => (
+                <Card key={fav.id} fav={fav}></Card>
+              ))}
+              <div>
+                <h3 className="text-lg font-semibold">No favorite yet</h3>
+                <p className="text-gray-600 p-3">
+                  Click the heart icon on any item to add it to your favorites
+                </p>
+              </div>
             </div>
             <hr className="mt-3.5 text-[#DCE5F3]" />
             <div className="flex justify-between p-5">
@@ -63,7 +55,7 @@ function App() {
           </div>
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }
