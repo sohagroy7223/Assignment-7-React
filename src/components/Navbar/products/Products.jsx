@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Product from "../../product/Product";
 
-const Products = ({ handelFavorite, handelToHeard, active }) => {
+const Products = ({ handelFavorite, handelToHeard, favorite, active }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Products = ({ handelFavorite, handelToHeard, active }) => {
                 handelFavorite={handelFavorite}
                 key={product.id}
                 product={product}
-                active={active.includes(product.id)}
+                active={favorite.find((fav) => fav.id === product.id)}
               />
             ))}
           </tbody>
