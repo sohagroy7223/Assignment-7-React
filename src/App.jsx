@@ -36,7 +36,7 @@ function App() {
               <h3 className="text-2xl font-medium">Favorite Items</h3>
             </div>
             <hr className="text-[#DCE5F3]" />
-            <div className="text-center mt-3">
+            <div className="text-center mt-3 p-3 ">
               {favorite.map((fav) => (
                 <Card key={fav.id} fav={fav}></Card>
               ))}
